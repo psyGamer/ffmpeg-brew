@@ -1,4 +1,4 @@
-name: Build
+name: Install
 
 on:
   workflow_dispatch:
@@ -7,8 +7,10 @@ jobs:
   Apple:
     runs-on: macos-latest
     steps:
+      - name: Setup tap
+        run: brew tap homebrew-ffmpeg/ffmpeg
       - name: Install
-        run: brew install ffmpeg
+        run: brew install homebrew-ffmpeg/ffmpeg/ffmpeg
       - name: Upload usr
         uses: actions/upload-artifact@v2
         with:
