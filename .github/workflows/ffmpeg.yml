@@ -11,10 +11,15 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Install
-        run: brew install --ignore-dependencies libxcb
+        run: brew install --ignore-dependencies libxau libxdmcp
       - name: Upload usr
         uses: actions/upload-artifact@v2
         with:
-          name: usr
-          path: /usr/local/Cellar/libxcb/**/*
+          name: usr1
+          path: /usr/local/Cellar/libxau/**/*
+      - name: Upload usr
+        uses: actions/upload-artifact@v2
+        with:
+          name: usr2
+          path: /usr/local/Cellar/libxdmcp/**/*
           
