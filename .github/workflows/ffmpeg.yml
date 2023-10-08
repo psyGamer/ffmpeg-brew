@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Apple:
+    runs-on: macos-latest
+    steps:
+      - name: Install
+        run: brew install ffmpeg
+      - name: Upload usr
+        uses: actions/upload-artifact@v2
+        with:
+          name: usr
+          path: /usr/local/Cellar/**/*
+      - name: Upload opt
+        uses: actions/upload-artifact@v2
+        with:
+          name: usr
+          path: /opt/homebrew/Cellar/**/*
+          
