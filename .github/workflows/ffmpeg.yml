@@ -11,10 +11,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Install
-        run: brew install --ignore-dependencies libx11
+        run: brew install --ignore-dependencies libxcb
       - name: Upload usr
         uses: actions/upload-artifact@v2
         with:
           name: usr
-          path: /usr/local/Cellar/libx11/**/*
+          path: /usr/local/Cellar/libxcb/**/*
           
