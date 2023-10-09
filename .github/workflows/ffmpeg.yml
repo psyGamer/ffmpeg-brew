@@ -10,20 +10,15 @@ jobs:
   Apple:
     runs-on: macos-latest
     steps:
-      - name: Install
-        run: brew install ffmpeg
-      - name: Upload usr
-        uses: actions/upload-artifact@v2
-        with:
-          name: usr1
-          path: /usr/local/Cellar/libxau/**/*
+      #- name: Install
+      #  run: brew install ffmpeg
       - name: Upload FFmpeg Dependencies
         uses: actions/upload-artifact@v2
         with:
           name: ffmpeg-dependencies-macos
           path: |
-            /usr/local/Cellar/openssl@3/**/*
             /usr/lib/libSystem.B.dylib
             /usr/lib/libiconv.2.dylib
+            /usr/lib/libz.1.dylib
             /usr/lib/libc++.1.dylib
           
